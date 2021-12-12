@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "46629cc4-211b-470e-829a-ec56f3633299",
+		"name": "project4339",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "intake form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"identity\": {\r\n        \"firstName\": \"Jenny\",\r\n        \"lastName\": \"Saunders\",\r\n        \"phoneNumber\": 8321112222\r\n    },\r\n    \"zipCode\": 77888,\r\n    \"eventDetail\": {\r\n        \"locationName\": \"BBVA Stadium\",\r\n        \"event_name\": \"BBVA Stadium Food Distribution\",\r\n        \"event_type\": \"Food Distribution\",\r\n        \"event_date\": \"2021-10-06\"\r\n    },\r\n    \"question\": {\r\n        \"howDidHearBoutUs\": {\r\n            \"facebook\": 0,\r\n            \"instagram\": 0,\r\n            \"twitter\": 0,\r\n            \"wordOfMouth\": 0,\r\n            \"kmaz1025fm\": 0,\r\n            \"others\": \"google\"\r\n        },\r\n        \"covidVacCheck\": 0,\r\n        \"covidVacChoice\": \"Pfizer\",\r\n        \"confirmVac\": 0,\r\n        \"addiSupportiveServces\": 1,\r\n        \"addtionalSupport\": \"need medical support\",\r\n        \"numOfChildrenInHouseHold\": \"2\",\r\n        \"age65PlusCheck\": 1,\r\n        \"venteranCheck\": 1,\r\n        \"raceCheck\": \"Hispanic or Latino\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/form",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/individuals",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"individuals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users by zipcode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/individuals/77888",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"individuals",
+						"77888"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by event date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/individuals/event/2021-10-06",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"individuals",
+						"event",
+						"2021-10-06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users history by identity",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Jenny\",\r\n    \"lastName\": \"Saunders\",\r\n    \"phoneNumber\": 8321112222\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/form",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create eventv2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": {\r\n        \"locationName\": \"Crawford Street\",\r\n        \"address\": \"2614 Dennis St\",\r\n        \"city\": \"Houston\",\r\n        \"state\": \"TX\",\r\n        \"zipCode\": 77004,\r\n        \"country\": \"USA\"\r\n    },\r\n    \"event_name\": \"Crawford Food distribution\",\r\n    \"event_type\": \"Food distribution\",\r\n    \"event_date\": \"2021-10-06\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/event",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/events",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update event by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"event_date\": \"2021-10-07\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/event/<copy any _id from the event get method here>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"event",
+						"<copy any _id from the event get method here>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete event by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/event/<copy any _id from the event get method here>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"event",
+						"<copy any _id from the event get method here>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/locations",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create location",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"locationName\":\"University of Houston\",\r\n    \"address\":\"4800 Calhoun Rd\",\r\n    \"city\":\"Houston\",\r\n    \"state\":\"TX\",\r\n    \"zipCode\":77004,\r\n    \"country\":\"USA\"}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/locations",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update location by locationName",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"locationName\":\"University of Houston Sugarland\",\r\n    \"address\":\"Brazos Hall, 14004 University Blvd\",\r\n    \"city\":\"Sugar Land\",\r\n    \"state\":\"TX\",\r\n    \"zipCode\":77439,\r\n    \"country\":\"USA\"}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/locations/University of Houston",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"locations",
+						"University of Houston"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete location by locationName",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"locationName\": \"University of Houston Sugarland\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/locations",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"locations"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
